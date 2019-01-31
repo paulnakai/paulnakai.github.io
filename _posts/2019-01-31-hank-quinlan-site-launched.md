@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hank Quinlan, Horrible Cop, Launches Site"
+title: "Paul Gregg Launches Site"
 date: 2019-01-31
 ---
 
