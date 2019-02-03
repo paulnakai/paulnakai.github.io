@@ -1,3 +1,4 @@
 name: Paul Gregg
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+theme: alembic-jekyll-theme
