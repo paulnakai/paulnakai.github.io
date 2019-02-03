@@ -1,5 +1,6 @@
 name: Paul Gregg
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-plugins: jekyll_remote_theme
+plugins:
+    - jekyll-remote-theme
 remote_theme: daviddarnes/alembic
