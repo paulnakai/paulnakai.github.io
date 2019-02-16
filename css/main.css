@@ -2,6 +2,9 @@ body {
     margin: 60px auto;
     width: 70%;
     background: url(/img/congruent_pentagon.png) repeat 0 0;
+    font-size: 1.25em;
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
 }
 nav ul, footer ul {
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -21,14 +24,11 @@ a:hover {
     text-decoration: underline;
 }
 h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     font-family: 'Quicksand', sans-serif;
 }
-p {
-    font-size: 1.5em;
-    font-family: 'Quicksand', sans-serif;
+p, ol {
     line-height: 1.4em;
-    color: #333;
 }
 footer {
     border-top: 1px solid #d5d5d5;
@@ -37,10 +37,24 @@ footer {
 
 ul.posts { 
     margin: 20px auto 40px; 
-    font-size: 1.5em;
     font-family: 'Quicksand', sans-serif;
 }
 
 ul.posts li {
     list-style: none;
+}
+
+/* Blog posts */
+
+/* for image caption */
+img + em {
+    font-style: normal;
+    display: block;
+    text-align: center;
+    font-size: 60%;
+}
+
+.center-image {
+    margin: 0 auto;
+    display: block;
 }
