@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Medium: Money vs. Time"
+title: "Money vs. Time"
 date: 2018-06-04
 ---
 
-[Link to original post](https://medium.com/@paul.n.gregg/money-vs-time-271b39a1dbb7).
+[Link to original Medium post](https://medium.com/@paul.n.gregg/money-vs-time-271b39a1dbb7).
 
 I read [this article](https://www.thecut.com/2018/05/how-to-be-happy.html) on The Cut about how college students aren’t happy (news flash) that broke down a happiness course at Yale which, among other things, attempted to tackle the two giants: time and money. Two commodities that tend to congeal into this amorphous blob monster that constantly evades your clutches, and if you do happen to grasp it, it points to the other side of the room at a sexier clone of itself, which then proceeds to scream “ARE YOU HAPPY NOW?!” at you, at which point you let go and start chasing Sexy TimeMoneyMonster, rinse and repeat.
 

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Medium: 'Profile Paralysis' and the Early Waves of Social Media Abandonment"
+title: "'Profile Paralysis' and the Early Waves of Social Media Abandonment"
 date: 2018-12-02
 ---
 
-[Link to original post](https://medium.com/@paul.n.gregg/profile-paralysis-and-the-early-waves-of-social-media-abandonment-3d418362fe2d).
+[Link to original Medium post](https://medium.com/@paul.n.gregg/profile-paralysis-and-the-early-waves-of-social-media-abandonment-3d418362fe2d).
 
 Is it possible to represent yourself authentically online? I used to think so. Now, I’m not so sure.
 

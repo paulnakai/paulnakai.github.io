@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Medium: Doing Well or Doing Good: Can You Really Do Both?"
+title: "Doing Well or Doing Good: Can You Really Do Both?"
 date: 2018-10-20
 ---
 
-[Link to original post](https://medium.com/@paul.n.gregg/doing-well-or-doing-good-can-you-really-do-both-611d8394a2dc).
+[Link to original Medium post](https://medium.com/@paul.n.gregg/doing-well-or-doing-good-can-you-really-do-both-611d8394a2dc).
 
 The short answer: not as often as you’d like to think.
 

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Medium: The True Meaning of Workplace Wellness"
+title: "The True Meaning of Workplace Wellness"
 date: 2018-08-04
 ---
 
-[Link to original post](https://medium.com/@paul.n.gregg/the-true-meaning-of-workplace-wellness-d1102243295f).
+[Link to original Medium post](https://medium.com/@paul.n.gregg/the-true-meaning-of-workplace-wellness-d1102243295f).
 
 Why in-house yoga and financial weight loss incentives are not the answer.
 

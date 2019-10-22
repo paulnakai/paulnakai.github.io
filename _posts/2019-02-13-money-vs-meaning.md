@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Medium: Money vs. Meaning"
+title: "Money vs. Meaning"
 date: 2019-02-13
 ---
 
-[Link to original post](https://medium.com/@paul.n.gregg/money-vs-meaning-64a7c29c1dcb).
+[Link to original Medium post](https://medium.com/@paul.n.gregg/money-vs-meaning-64a7c29c1dcb).
 
 The current state of work and my rosiest-glasses utopian daydream for the future.
 
