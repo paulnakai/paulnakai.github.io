@@ -6,7 +6,7 @@ permalink: /people/
 
 # {{ page.title }}
 
-Paul's People Projects is my alliterative assortment of projects that revolve around human behavior. They are at the intersection of behavioral science, art, design, and communication. Through them I hope to better understand people and enable others to 
+"Paul's People Projects" is my alliterative assortment of projects that revolve around human behavior. They are a marriage of several interests: behavioral science, art, design, and communication. I'm aiming for a fun and engaging way of building connection and understanding between people. Get in touch if you want to collaborate!
 
 Some guiding questions:
 - Belief vs. Behavior. What drives the gaps between them? About how to live a good life, one's personal qualities, ? When is that gap useful and not? How do beliefs and behavior reinforce and undermine each other?

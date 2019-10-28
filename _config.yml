@@ -1,5 +1,5 @@
 name: Paul Gregg
-markdown: kramdown
+markdown: CommonMarkGhPages
 permalink: /blog/:year/:month/:day/:title
 description: >
   Paul Gregg is a common name. Find out if you tracked down the right one.
