@@ -11,29 +11,55 @@ permalink: /endurance/
     <div class = "col-4"><iframe height='160' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/38702205/activity-summary/3fdde31678660e67b32fc2cda4ffc53b5a221592'></iframe></div>
 </div>
 
-### Season goals
+## Season overview
 <details>
     <summary>2018</summary>
 
-    Test text.
+Highlights: 
+- Good first Half-Ironman (HIM)
+- Good first Marathon
+
+Lowlights:
+- Bad second HIM
+- Bad second Marathon
+
+I succeeded in my primary goals of completing my first half-ironman (HIM) and my first marathon. Both races went well. I also raced a second HIM and Marathon. The timing of these races was poor which led to inadequate prep for my second HIM, an IT band injury during the race, and running the second marathon when I had just barely healed. I was lucky to not re-aggravate the injury, and it was painful.
+
+All in all, a great season. Learned a lot, lots of milestones, lots of fun! 
 </details>
 
 <details>
     <summary>2019</summary>
 
-    Test text.
+Highlights
+- Completed primary goals of (1) staying healthy and (2) qualifying for the IM World Champs in Kona
+- IM World Champs!!
+- "Training" via bike trip across Umbria, Italy
+
+Lowlights
+- Inconsistent training due to traveling
+- Subsequent negative effects on motivation
+
+I raced less this year, and I'm happy to say that meant I was better about not overextending myself. Didn't get hurt! But on the flip-side, I had subpar preparation for a lot of my races. I set PBs in several races, but only because I still have so few races under my belt. The Ironman World Champs was about the only race I had a great preparation for, and thank goodness for that, because what a beast!
+
+
 </details>
 
-<details>
+<details open>
     <summary>2020</summary>
 
-    Test text.
+Goals
+- Sub-3hr marathon (qualify for Boston)
+- Raise bike FTP to 250
+- Sub-5hr HIM
+
+Still picking races. More to come!
 </details>
 
 
-### Races
+## Results
 
-PR's are bold.
+PBs are bold.
  
 <div class="row">
     <div class="col-3"><u><b>Race</b></u></div>

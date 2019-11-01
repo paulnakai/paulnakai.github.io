@@ -8,7 +8,7 @@ date: 2019-02-13
 
 The current state of work and my rosiest-glasses utopian daydream for the future.
 
-!["frustrated-stick-figure"](/img/moneymeaning1.png){: height="75%" width="75%" .center-image}
+<img src="/img/moneymeaning1.png" alt="frustrated-stick-figure" height="75%" width="75%" class="center-image">
 
 As a 23-year-old who’s still looking ahead toward my murky career, I can’t escape the feeling that it comes down to choosing between money and meaning.
 
@@ -32,7 +32,7 @@ This is to say: money is no longer a means to an end but an end in itself (I kno
 
 Now, with most work as an end in itself, that mechanism is gone. We think of the value of physical pleasures and experiences in terms of their *worth* rather than their *meaning*. But this dissociation itself has generated the duality of money and meaning. Like any duality, the abstraction of money has necessarily led to the abstraction of the concept of meaning. There’s no good without bad, no yin without yang, no light without dark, no “money” without “meaning.” And thus, back when money carried less metaphysical weight, we had fewer existential crises.
 
-!["money-meaning-duality"](/img/moneymeaning2.png){: height="75%" width="75%" .center-image}
+<img src = "/img/moneymeaning2.png" alt="money-meaning-duality" height="75%" width="75%" class="center-image">
 
 I suppose the other significant puzzle piece is the state of capitalism today. Part of money’s detachment from meaning has been driven by the separation of capital and true productivity today. Capitalism is predicated on preventing this separation (i.e. that and only that which is socially meaningful generates profit), but I think we can all agree that fantasy is not our reality. Capital accrues in hand-wavy ways while productive labor is stomped upon.
 
@@ -76,8 +76,8 @@ What if we all used leisure to spend more time with our families, build communit
 
 What if we embraced new social norms around balancing family and work across a lifetime that led to richer family lives and less burnout? What if we had policies that allowed for that?
 
-!["life-redesigned"](/img/moneymeaning3.png){: height="75%" width="75%" .center-image}
-*What if we were all able to make “work” work around our lives?*
+<img src="/img/moneymeaning3.png" alt="life-redesigned" height="75%" width="75%" class="center-image">
+<em>What if we were all able to make “work” work around our lives?</em>
 
 What if we used our free time to collectively participate in academic surveys much more, unleashing the potential of legitimate, robust social science to further improve our lives?
 

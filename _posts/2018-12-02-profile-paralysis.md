@@ -8,8 +8,8 @@ date: 2018-12-02
 
 Is it possible to represent yourself authentically online? I used to think so. Now, I’m not so sure.
 
-!["tech-stock-photo"](/img/profile.png){: .center-image}
-*My bold rebellion against the perfectly-manicured online self. This is my big statement piece. Really makes you think, doesn’t it?*
+<img src="/img/profile.png" alt="tech-stock-photo" class="center-image">
+<em>My bold rebellion against the perfectly-manicured online self. This is my big statement piece. Really makes you think, doesn’t it?</em>
 
 Ooh, what an edgy intro. Good timing, a healthy dose of gravitas but without being stuffy. The perfect opening. There’s only one problem: it feels fake.
 

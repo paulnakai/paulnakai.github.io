@@ -8,8 +8,8 @@ date: 2018-10-20
 
 The short answer: not as often as you’d like to think.
 
-!["well-good-venn-diagram"](/img/wellgood.png){:height="75%" width="75%" .center-image}
-*(My day 1 graphic design skills)*
+<img src="/img/wellgood.png" alt="well-good-venn-diagram" height="75%" width="75%" class="center-image">
+<em>(My day 1 graphic design skills)</em>
 
 Rather, if you focus on doing good, you might come to realize you do quite well (in a more comprehensive sense). But if you focus on doing well, you’re probably not doing as much good as you think. To understand why, read Anand Giridharadas’s new book [Winners Take All: The Elite Charade of Changing the World](https://www.penguinrandomhouse.com/books/539747/winners-take-all-by-anand-giridharadas/9780451493248/). This week, I attended a book launch of his, which brought me here. I will refrain from summarizing the book here, but I cannot recommend it highly enough. Instead, I will start from the same puzzle the book does, and offer my own reflection.
 
@@ -22,8 +22,8 @@ You could dispute truth #1. You could point out that giving by the rich as a per
 
 But you can’t dispute truth #2. The cold, hard fact remains that the rich are getting richer a hell of a lot faster than the poor are. This is not a “rising tide lifts all boats” situation. The tide is catapulting the yachts and flooding everyone else.
 
-!["inequality-graph"](/img/inequality.png){:height="75%" width="75%" .center-image}
-*Stolen from [here](http://nymag.com/intelligencer/2018/07/oecd-study-labor-conditions-confirms-that-u-s-workers-are-getting-ripped-off.html?gtm=top&gtm=top)*
+<img src="/img/inequality.png" alt="inequality-graph" height="75%" width="75%" class="center-image">
+<em>Stolen from <a href="http://nymag.com/intelligencer/2018/07/oecd-study-labor-conditions-confirms-that-u-s-workers-are-getting-ripped-off.html?gtm=top&gtm=top">here</a></em>
 
 To complement Anand’s story of why this is the case, I want to flesh out the story he tells in chapter 2 of his book: the story of the well-meaning elite college grad.
 
