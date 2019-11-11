@@ -6,7 +6,7 @@ permalink: /people/
 
 # {{ page.title }}
 
-"Paul's People Projects" is my alliterative assortment of projects that revolve around human behavior. They are a marriage of several interests: behavioral science, art, design, and communication. I'm aiming for a fun and engaging way of building connection and understanding between people. Get in touch if you want to collaborate!
+"Paul's People Projects" is my alliterative assortment of projects that revolve around human behavior. They are a marriage of several interests: behavioral science, art, design, and data journalism. I'm aiming for a fun and engaging way of building connection and understanding between people. Get in touch if you want to collaborate!
 
 <details>
     <summary> Motivating questions </summary>
@@ -19,13 +19,13 @@ permalink: /people/
 
 ## In The Works
 
-#### Letter-writing project
+### Letter-writing project
 Snail mail between me and anyone who bites: my closest friends, distant acquaintances, and random strangers. Turning my daily journal into a daily letter. Meant to be an antidote to the counterintuitive side effects of our constantly-connected world. An experiment in authenticity, vulnerability, and more satisfying communication. Not pen pals per se, but more like sending feelers out into the void and seeing what comes back!  
 Will begin once I'm somewhere more settled for at least 6 months. More details to come. 
 
-#### Life story project 
+### Life story project 
 A photo album + diary for the modern age. A collaborative way for families and friends to document and share their life stories. Ideally as user-friendly and simple as possible: write some text, upload pics/videos, and invite others to contribute to shared life experiences. Not a social network, just a better tool for future nostalgia and documenting one's life for personal use. I know that in my young life I'm already forgetting many details and moments...  
 If you're interested and able, help me! Starting from scratch on learning how to put this together as a web/mobile app so would love input. 
 
-#### Similarities surveys (ongoing)
-Sporadic surveys usually motivated by "I wonder if this is just me or a general truth." The focus is more on curiosity than scientific rigor. I hope to marry the clickbait appeal of Buzzfeed with the deeper reflection of good art. 
+### Similarities surveys (ongoing)
+Surveys motivated by my hunches. The focus is more on curiosity than scientific rigor (i.e. not worried about representativeness). I hope to marry the clickbait appeal of Buzzfeed with the deeper reflection of good art. 
