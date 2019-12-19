@@ -12,6 +12,8 @@ I think the common wisdom is symptomatic of some problematic patterns that I don
 
 ## The world today vs. the world to aim for
 
+Note that the following criticisms are directed at the conditions and incentives individuals face, not the desires and values of individuals themselves. Getting from "the world toay" to "the world to aim for" does not require changing individual human nature, just which aspects of human nature we encourage and discourage. This is a macro-level criticism of the traps that many of us find ourselves unfortunately stuck in.
+
 In the world today, work is regarded as the supreme source of validity and respect. We identify ourselves chiefly by the way we are paid. We accept as gospel the ideology that humans are innately selfish and societies must accept that or risk collapse. We collectively agree that the best way to motivate members of society to contribute is money: the carrots of consumerism and the sticks of eviscerating the poor.
 
 In the world to aim for, we recognize that from an early age, we are all motivated to help one another. We recognize that our answers to "if I didn't I have to worry about money, I'd..." reflect diverse desires for care, beauty, community, and justice. We agree that curiosity, self-improvement, and the joy of lifting others up are universal human experiences when nurtured. We are more thoughtful about the differences between fixed human nature and human behavior under different incentives and environmental conditions. 

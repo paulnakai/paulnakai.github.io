@@ -16,6 +16,9 @@ permalink: /people/
 - **Awareness**. How accurately do we diagnose what makes us happy? How many of our behaviors do we choose? Are we correct about what most influences our behavior and how we affect others? How can we raise our awareness of all of these things? 
 </details>
 
+## Media
+
+
 
 ## In The Works
 
@@ -29,3 +32,5 @@ If you're interested and able, help me! Starting from scratch on learning how to
 
 ### Similarities surveys (ongoing)
 Surveys motivated by my hunches. The focus is more on curiosity than scientific rigor (i.e. not worried about representativeness). I hope to marry the clickbait appeal of Buzzfeed with the deeper reflection of good art. 
+
++ [What would you do differently if you had perfect control over your behavior?](https://forms.gle/XJVhCBTAgjJJz1o48)
