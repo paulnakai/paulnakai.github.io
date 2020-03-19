@@ -7,7 +7,7 @@ permalink: /endurance/
 # {{ page.title }}
 
 <div class="row">
-    <div class="col-8">I enjoy endurance sports. Running is my bread and butter, and triathlon is my veggies and legumes (work in progress).</div>
+    <div class="col-8">I enjoy endurance sports. Running is my first love, and triathlon is my ongoing project.</div>
     <div class = "col-4"><iframe height='160' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/38702205/activity-summary/3fdde31678660e67b32fc2cda4ffc53b5a221592'></iframe></div>
 </div>
 

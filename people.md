@@ -11,9 +11,9 @@ permalink: /people/
 <details>
     <summary> Motivating questions </summary>
 
-- **Belief vs. Behavior**. What drives the gaps between them? About how to live a good life, one's personal qualities, ? When is that gap useful and not? How do beliefs and behavior reinforce and undermine each other?
+- **Belief vs. Behavior**. What drives the gaps between them? About living a good life, one's personal qualities, the best way to allocate one's time? When is that gap useful and not? How do beliefs and behavior reinforce and undermine each other?
 - **Motivation**. What balance of short-term vs. long-term desires leads to a maximally satisfying life? What does this balance look like over the course of a day, week, year? When are people *actually* successful at prioritizing long-term over short-term?
-- **Awareness**. How accurately do we diagnose what makes us happy? How many of our behaviors do we choose? Are we correct about what most influences our behavior and how we affect others? How can we raise our awareness of all of these things? 
+- **Awareness**. How accurately do we diagnose what makes us happy? How many of our behaviors do we choose? Are we correct about what most influences our behavior and how we influence others'? How can we raise our awareness of all of these things? 
 </details>
 
 ## Media
