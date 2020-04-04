@@ -2,6 +2,7 @@
 layout: post
 title: "The True Meaning of Workplace Wellness"
 date: 2018-08-04
+thumbnail: /img/na.png
 ---
 
 [Link to original Medium post](https://medium.com/@paul.n.gregg/the-true-meaning-of-workplace-wellness-d1102243295f).

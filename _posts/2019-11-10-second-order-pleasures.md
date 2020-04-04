@@ -2,6 +2,7 @@
 layout: post
 title: "Second-order pleasures: who we choose to be, not default to be"
 date: 2019-11-10
+thumbnail: /img/pleasures.png
 ---
 
 I like lying in bed in the mornings. But do I *like* that I like lying in bed in the morning? No. Our second-order pleasures — our like-that-I-likes (or in this case, don't-like-that-I-like) — are important to understand. We may not have much control over how much we enjoy ice cream or exercise, but we can aspire to like them more or less. Those aspirations, not our basic dopamine response, best define who we are.

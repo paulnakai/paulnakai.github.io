@@ -2,6 +2,7 @@
 layout: post
 title: "'Profile Paralysis' and the Early Waves of Social Media Abandonment"
 date: 2018-12-02
+thumbnail: /img/na.png
 ---
 
 [Link to original Medium post](https://medium.com/@paul.n.gregg/profile-paralysis-and-the-early-waves-of-social-media-abandonment-3d418362fe2d).

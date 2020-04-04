@@ -2,13 +2,14 @@
 layout: post
 title: "Doing Well or Doing Good: Can You Really Do Both?"
 date: 2018-10-20
+thumbnail: /img/wellgood2.png
 ---
 
 [Link to original Medium post](https://medium.com/@paul.n.gregg/doing-well-or-doing-good-can-you-really-do-both-611d8394a2dc).
 
 The short answer: not as often as you’d like to think.
 
-<img src="/img/wellgood.png" alt="well-good-venn-diagram" height="75%" width="75%" class="center-image">
+<img src="/img/wellgood2.png" alt="well-good-venn-diagram" class="center-image">
 <em>(My day 1 graphic design skills)</em>
 
 Rather, if you focus on doing good, you might come to realize you do quite well (in a more comprehensive sense). But if you focus on doing well, you’re probably not doing as much good as you think. To understand why, read Anand Giridharadas’s new book [Winners Take All: The Elite Charade of Changing the World](https://www.penguinrandomhouse.com/books/539747/winners-take-all-by-anand-giridharadas/9780451493248/). This week, I attended a book launch of his, which brought me here. I will refrain from summarizing the book here, but I cannot recommend it highly enough. Instead, I will start from the same puzzle the book does, and offer my own reflection.

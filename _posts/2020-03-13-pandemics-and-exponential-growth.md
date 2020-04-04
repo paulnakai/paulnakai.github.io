@@ -2,6 +2,7 @@
 layout: post
 title: "We're bad at pandemics because we're bad at large numbers"
 date: 2020-03-13
+thumbnail: /img/thumbnails/pandemic.png
 ---
 
 In the early days of the Coronavirus outbreak, the US (among other countries) has been drastically too slow to respond. This is certainly true from a federal standpoint, but we’ll leave that discussion to others and focus on everyday people here. Experts are advising “social distancing” to slow the spread of the virus, and people are starting to take heed as events are being cancelled. However, all too many people are still interacting much more than they should. We simply don’t do a good job of internalizing how exponential growth works. We’ve all seen the squiggly line in math books, but any level of intellectual understanding does not easily translate to the moral, real-world decisions we now face.
@@ -10,13 +11,13 @@ As such, here are a few examples of exponential growth in pandemic terms. Before
 
 So first, let’s look at the most textbook example of exponential growth. In pandemic terms, how many infections would we have after 10 days if (1) we started with one infected person and (2) each day, each infected person spreads the virus to one other person?
 
-<img src="/img/exp-one.gif" alt="Exponential growth, one infection/day" height="50%" width="50%" class="center-image">
+<img src="/img/exp-one.gif" alt="Exponential growth, one infection/day" class="center-image" style="max-width: 400px">
 
 I say this is the most textbook case because it is a case of simple doubling of cases each day. One becomes two becomes four etc. As we see, after 10 days we end up with just over one thousand cases. Doesn’t sound too bad, right? 
 
 Let’s compare this to the same time frame (10 days), still starting with just one infected person, but this time each person spreads the virus to *two* other people per day.
 
-<img src="/img/exp-two.gif" alt="Exponential growth, two infections/day" height="50%" width="50%" class="center-image">
+<img src="/img/exp-two.gif" alt="Exponential growth, two infections/day" height="50%" width="50%" class="center-image" style="max-width: 400px">
 
 This time, after 10 days we have almost 60,000 cases. In other words, sixty times as many. And this comes from a difference of just one interaction per day. If you were an individual with the virus, you might not even notice the difference between one and two possible infections per day. In either case, you’re hardly interacting with anyone. But the difference is extreme over time.
 
@@ -26,7 +27,7 @@ Let’s scale it up even more to consider what we might call “normal” life. 
 
 Let’s consider the cases where each person interacts with 5 or 10 people per day, on average. Not a wild assumption in either case. Most people might call those scenarios normal life. In these cases, again starting with just a single infected person, how long would it take for us to reach 10 million cases?
 
-<img src="/img/infection.gif" alt="Exponential growth, one infection/day" height="50%" width="50%" class="center-image">
+<img src="/img/infection.gif" alt="Exponential growth, one infection/day" height="50%" width="50%" class="center-image" style="max-width: 400px">
 
 In each case, we would reach 10 million cases in around a week. If we interact with only one or two people per day, we delay that exponential spike greatly.
 

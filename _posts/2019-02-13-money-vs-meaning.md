@@ -2,6 +2,7 @@
 layout: post
 title: "Money vs. Meaning"
 date: 2019-02-13
+thumbnail: /img/moneymeaning2.png
 ---
 
 [Link to original Medium post](https://medium.com/@paul.n.gregg/money-vs-meaning-64a7c29c1dcb).

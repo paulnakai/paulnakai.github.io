@@ -2,6 +2,7 @@
 layout: post
 title: "My website: a microcosm of a more ideal world"
 date: 2019-11-09
+thumbnail: /img/headshot.png
 ---
 
 Common wisdom says that a personal website is a huge opportunity to demonstrate your skills, get detailed on your niche, and generally maximize your employability. I've been conflicted about this because I'm still building my skills, figuring out my niche, and I instinctively hate the words "employability," "self-marketing", and "personal branding." The first two sources of conflict will go away, but the final one won't. I hate those words, and you should too. At least, you shouldn't have to love them.

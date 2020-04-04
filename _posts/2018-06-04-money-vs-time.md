@@ -2,6 +2,7 @@
 layout: post
 title: "Money vs. Time"
 date: 2018-06-04
+thumbnail: /img/na.png
 ---
 
 [Link to original Medium post](https://medium.com/@paul.n.gregg/money-vs-time-271b39a1dbb7).

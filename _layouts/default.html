@@ -1,9 +1,137 @@
 <!DOCTYPE html>
 	<html>
+	  <head>
+	    <meta charset="utf-8">
+	    <title>{{ page.title }}</title>
+	    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:700|Quicksand:500" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="/css/main.css">
+	    <!-- <script type="text/javascript" src="/js/main.js"></script>  -->
+	  </head>
+	  <body>
+
+	    <header class="header">
+		  <!-- <a href="" class="logo">Logo</a> -->
+		  <input class="menu-btn" type="checkbox" id="menu-btn" />
+		  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+		  <ul class="menu">
+		    <li><a href="/">Home</a></li>
+	        <li><a href="/blog">Blog</a></li>
+			<li><a href="/people">People Projects</a></li>
+			<li><a href="/endurance">Endurance</a></li>
+			<li><a href="/music">Music</a></li>
+		  </ul>
+		</header>
+
+		<div class="main">
+			{{ content }}
+		</div>
+
+		<footer>
+	    	<ul>
+	       		<li><a href="mailto:paul.n.gregg@gmail.com">get in touch!</a></li>
+			</ul>
+		</footer>
+	   
+	  </body>
+	</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- <html>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>{{ page.title }}</title>
+			<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:700|Quicksand:500" rel="stylesheet"> 
+			
+			<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+		</head>
+
+		<body>
+			<div class="grid-container">
+				
+   				<div class="navbar">
+    				<nav>
+	    				<ul>
+			        		<li><a href="/">Home</a></li>
+			        		<li><a href="/blog">Blog</a></li>
+							<li><a href="/people">People Projects</a></li>
+							<li><a href="/endurance">Endurance</a></li>
+							<li><a href="/music">Music</a></li>
+						</ul>
+					</nav>
+				</div>
+
+   				<div class="sidebar">
+   					<img src="/assets/img/favicon-16.png">
+   				</div>
+
+   				<div class="main">
+			    	{{ content }}
+				</div>
+			    
+    			<div class="myfooter">
+    				<footer>
+	    				<ul>
+	        				<li><a href="mailto:paul.n.gregg@gmail.com">get in touch!</a></li>
+						</ul>
+					</footer>
+    			</div>
+			</div>	
+		</body>
+	</html> -->
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+	<html>
 		<head>
 			<title>{{ page.title }}</title>
 			<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:700|Quicksand:500" rel="stylesheet"> 
-			<!-- link to main stylesheet -->
+			
 			<link rel="stylesheet" type="text/css" href="/css/main.css">
 		</head>
 		<body>
@@ -20,7 +148,7 @@
 			
 			{{ content }}
 			
-			</div><!-- /.container -->
+			</div>
 			<footer>
 	    		<ul>
 	        		<li><a href="mailto:paul.n.gregg@gmail.com">get in touch!</a></li>
@@ -28,3 +156,4 @@
 			</footer>
 		</body>
 	</html>
+-->
