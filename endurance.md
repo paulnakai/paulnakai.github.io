@@ -27,7 +27,7 @@ permalink: /endurance/
 # {{ page.title }}
 
 <div class="grid-endurance">
-    <p> Blah blah blah this is what I'm trying to do. Loren ipsum blah blah blah. Here's the deal. Kitto doggo meow meow meow. Blew blew blah blah bleep bleep blop.</p>
+    <p> I enjoy endurance sports as one of my main hobbies. I am currently diving deeper into my love of running, and I have dabbled in triathlon and intend to continue to hone my swimming and biking. Below is an overview of my journey, which is hopefully just beginning!</p>
     <div class="iframe-container">
         <iframe frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/38702205/activity-summary/3fdde31678660e67b32fc2cda4ffc53b5a221592' class="resp-iframe"></iframe>
     </div>
