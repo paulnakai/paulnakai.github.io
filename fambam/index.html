@@ -1,3 +1,7 @@
+---
+layout: default
+title: FamBam Virtual Marathon 2020
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
     <style type="text/css">
-      /* No style rules here yet */   
+        
     </style>
   </head>
   <body>
@@ -61,7 +65,7 @@
                         }
                             return unique;
                         },[]);
-            alert("Successfully processed " + data.length + " rows!")
+            // alert("Successfully processed " + data.length + " rows!")
             document.getElementById("runs").innerHTML = "<strong>Runs:</strong> " + [ data[0].Timestamp, data[1]["Who are you?"], data[2].Name ].join(", ");
             console.log(data);
 
@@ -129,23 +133,6 @@
                       .attr("transform", 
                             "translate(" + margin.left + "," + margin.top + ")");
 
-            // svg.selectAll("rect")
-            //    .data(runData)
-            //    .enter()
-            //    .append("rect")
-            //    .attr("x", 0)
-            //    .attr("y", 0)
-            //    .attr("width", 20)
-            //    .attr("height", 100);
-
-            // svg.append("path")
-            //    .datum(runData)
-            //    .attr("fill", "none")
-            //    .attr("stroke", "steelblue")
-            //    .attr("d", d3.line()
-            //       .x(function(d) { return x(d.Date) })
-            //       .y(function(d) { return y(d.Distance) })
-            //     )
         </script>
 
   </body>
