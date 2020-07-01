@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fam Bamathon</title>
+    <!-- Load scripts -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <style type="text/css">
+      /* No style rules here yet */   
+    </style>
+  </head>
+  <body>
+        <p id="runs"></p>
+        <div id="container" class="svg-container"></div>
+        <table id="overviewTable" class="display" width="100%">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Distance</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+        </table>
+
+        <script type='text/javascript'>    
+
+          // Parse data from google sheets using Tabletop.js
+          // Note: Tabletop unusable as of Sept 2020?
+          var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1r8QitPc7MGNbQf4XPDmBFzb5erhWidWNkLTh5KcDbVA/edit?usp=sharing';
+
+          var runData, test;
+
+          function init() {
+                Tabletop.init( { key: publicSpreadsheetUrl,
+                                 callback: showInfo,
+                                 simpleSheet: true } )
+          }
+
+          window.addEventListener('DOMContentLoaded', init);
+
+          function showInfo(data, tabletop) {
+            runData = data // declare global variable
+            test = runData
+                        // Remove timestamp
+                        .map(function(obj){
+                            return { date: obj.Date,
+                                     distance: obj.Distance,
+                                     time: obj["Time (optional)"],
+                                     name: obj["Who are you?"]
+                                   }
+                        })
+                        // Remove duplicate entries (mom) BROKEN
+                        .reduce((unique, o) => {
+                            if(!unique.some(obj => obj.label === o.label && obj.value === o.value)) {
+                            unique.push(o);
+                        }
+                            return unique;
+                        },[]);
+            alert("Successfully processed " + data.length + " rows!")
+            document.getElementById("runs").innerHTML = "<strong>Runs:</strong> " + [ data[0].Timestamp, data[1]["Who are you?"], data[2].Name ].join(", ");
+            console.log(data);
+
+            // Add X axis --> it is a date format
+            var x = d3.scaleTime()
+              .domain(d3.extent(runData, function(d) { return parseTime(d.Date); }))
+              .range([ 0, width ]);
+            svg.append("g")
+              .attr("transform", "translate(0," + height + ")")
+              .call(d3.axisBottom(x));
+
+            // Add Y axis
+            var y = d3.scaleLinear()
+              .domain([0, d3.max(runData, function(d) { return +d.Distance; })])
+              .range([ height, 0 ]);
+            svg.append("g")
+              .call(d3.axisLeft(y));
+
+
+            // Make datatable
+            $(document).ready(function(){
+              $('#overviewTable').dataTable({
+                data: runData,
+                columns: [
+                  { data: 'Date', title: "Date" },
+                  { data: 'Who are you?', title: "Name" },
+                  { data: 'Distance', title: "Distance" },
+                  { data: 'Time (optional)', title: "Time" }
+                ]
+              });
+             });
+
+          }
+
+        //For converting strings to Dates
+        var parseTime = d3.timeParse("%m/%d");
+
+        // Clean data
+        // var cleanData = runData.map(function(d) { 
+        //     return {
+        //         date: parseTime(d.Date)
+        //     }
+        //   })
+
+      // set the dimensions and margins of the graph
+        var margin = {top: 20, right: 20, bottom: 30, left: 40},
+            width = 960 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+        // set the ranges
+        var x = d3.scaleBand()
+                  .range([0, width])
+                  .padding(0.1);
+        var y = d3.scaleLinear()
+                  .range([height, 0]);
+
+        
+
+        //Create SVG element
+        var svg = d3.select("div#container")
+                    .append("svg")
+                      .attr("width", width + margin.left + margin.right)
+                      .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                      .attr("transform", 
+                            "translate(" + margin.left + "," + margin.top + ")");
+
+            // svg.selectAll("rect")
+            //    .data(runData)
+            //    .enter()
+            //    .append("rect")
+            //    .attr("x", 0)
+            //    .attr("y", 0)
+            //    .attr("width", 20)
+            //    .attr("height", 100);
+
+            // svg.append("path")
+            //    .datum(runData)
+            //    .attr("fill", "none")
+            //    .attr("stroke", "steelblue")
+            //    .attr("d", d3.line()
+            //       .x(function(d) { return x(d.Date) })
+            //       .y(function(d) { return y(d.Distance) })
+            //     )
+        </script>
+
+  </body>
+    
+</html>
