@@ -10,6 +10,7 @@ title: FamBam Virtual Marathon 2020
     <!-- Load scripts -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
@@ -18,7 +19,7 @@ title: FamBam Virtual Marathon 2020
     </style>
   </head>
   <body>
-        <p id="runs"></p>
+    <p id="overall"></p>
         <div id="container" class="svg-container"></div>
         <table id="overviewTable" class="display" width="100%">
             <thead>
@@ -48,30 +49,38 @@ title: FamBam Virtual Marathon 2020
           window.addEventListener('DOMContentLoaded', init);
 
           function showInfo(data, tabletop) {
-            runData = data // declare global variable
-            test = runData
-                        // Remove timestamp
-                        .map(function(obj){
-                            return { date: obj.Date,
-                                     distance: obj.Distance,
-                                     time: obj["Time (optional)"],
-                                     name: obj["Who are you?"]
-                                   }
-                        })
-                        // Remove duplicate entries (mom) BROKEN
-                        .reduce((unique, o) => {
-                            if(!unique.some(obj => obj.label === o.label && obj.value === o.value)) {
-                            unique.push(o);
-                        }
-                            return unique;
-                        },[]);
-            // alert("Successfully processed " + data.length + " rows!")
-            document.getElementById("runs").innerHTML = "<strong>Runs:</strong> " + [ data[0].Timestamp, data[1]["Who are you?"], data[2].Name ].join(", ");
+            // Make clean data
+            runData = _.uniqWith( // Remove duplicate entries, see lodash
+                            // Remove timestamp
+                            data.map(function(obj){
+                                return { date: obj.Date,
+                                         distance: Number(obj.Distance),
+                                         time: obj["Time (optional)"],
+                                         name: obj["Who are you?"]
+                                       }
+                            })
+                        , _.isEqual);
             console.log(data);
+            console.log(runData);
+
+            test = runData
+            .map(obj => ({
+                    ...obj,
+                    totalDist: obj.distance + 1
+            }));
+
+            totMileage = d3.nest()
+                .key(function(d) { return d.name; })
+                .rollup(function(v) { return d3.sum(v, function(d) { return d.distance; }); })
+                .entries(runData);
+            for(var i=0; i < totMileage.length; i++) {
+                document.getElementById("overall").innerHTML +=
+                    totMileage[i]["key"] + ": " + totMileage[i]["value"] + "<br />";
+            };
 
             // Add X axis --> it is a date format
             var x = d3.scaleTime()
-              .domain(d3.extent(runData, function(d) { return parseTime(d.Date); }))
+              .domain(d3.extent(runData, function(d) { return parseTime(d.date); }))
               .range([ 0, width ]);
             svg.append("g")
               .attr("transform", "translate(0," + height + ")")
@@ -79,7 +88,7 @@ title: FamBam Virtual Marathon 2020
 
             // Add Y axis
             var y = d3.scaleLinear()
-              .domain([0, d3.max(runData, function(d) { return +d.Distance; })])
+              .domain([0, d3.max(runData, function(d) { return +d.distance; })])
               .range([ height, 0 ]);
             svg.append("g")
               .call(d3.axisLeft(y));
@@ -90,10 +99,10 @@ title: FamBam Virtual Marathon 2020
               $('#overviewTable').dataTable({
                 data: runData,
                 columns: [
-                  { data: 'Date', title: "Date" },
-                  { data: 'Who are you?', title: "Name" },
-                  { data: 'Distance', title: "Distance" },
-                  { data: 'Time (optional)', title: "Time" }
+                  { data: 'date', title: "Date" },
+                  { data: 'name', title: "Name" },
+                  { data: 'distance', title: "Distance" },
+                  { data: 'time', title: "Time" }
                 ]
               });
              });
