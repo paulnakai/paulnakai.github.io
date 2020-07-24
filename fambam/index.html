@@ -49,25 +49,23 @@ title: FamBam Virtual Marathon 2020
           window.addEventListener('DOMContentLoaded', init);
 
           function showInfo(data, tabletop) {
+            // Date methods
+            var parseTime = d3.timeParse("%m/%d");
+            var formatTime = d3.timeFormat("%B %d");
+
             // Make clean data
             runData = _.uniqWith( // Remove duplicate entries, see lodash
                             // Remove timestamp
                             data.map(function(obj){
-                                return { date: obj.Date,
+                                return { date: parseTime(obj.Date),
                                          distance: Number(obj.Distance),
                                          time: obj["Time (optional)"],
                                          name: obj["Who are you?"]
                                        }
                             })
                         , _.isEqual);
-            console.log(data);
-            console.log(runData);
-
-            test = runData
-            .map(obj => ({
-                    ...obj,
-                    totalDist: obj.distance + 1
-            }));
+            // console.log(data);
+            // console.log(runData);
 
             totMileage = d3.nest()
                 .key(function(d) { return d.name; })
@@ -78,28 +76,106 @@ title: FamBam Virtual Marathon 2020
                     totMileage[i]["key"] + ": " + totMileage[i]["value"] + "<br />";
             };
 
-            // Add X axis --> it is a date format
-            var x = d3.scaleTime()
-              .domain(d3.extent(runData, function(d) { return parseTime(d.date); }))
-              .range([ 0, width ]);
-            svg.append("g")
-              .attr("transform", "translate(0," + height + ")")
-              .call(d3.axisBottom(x));
+            var sortData = runData.sort((a,b) => a.date - b.date); 
 
-            // Add Y axis
-            var y = d3.scaleLinear()
-              .domain([0, d3.max(runData, function(d) { return +d.distance; })])
-              .range([ height, 0 ]);
-            svg.append("g")
-              .call(d3.axisLeft(y));
+            let paul = [];
+            let paulmileage = 0;
+            for (const obj of sortData.filter(person => person.name === "Paul")) {
+                let o = paul.find(o => o.date === obj.date);
+                paulmileage += obj.distance;
 
+                if(!o) {
+                    paul.push({mileage: paulmileage,
+                                  date: obj.date,
+                                  name: obj.name,
+                                  distance: obj.distance});
+                } else {
+                    o.mileage = paulmileage;
+                }
+            }
+            // console.log(paul)
+
+            let mom = [];
+            let mommileage = 0;
+            for (const obj of sortData.filter(person => person.name === "Mom")) {
+                let o = mom.find(o => o.date === obj.date);
+                mommileage += obj.distance;
+
+                if(!o) {
+                    mom.push({mileage: mommileage,
+                                  date: obj.date,
+                                  name: obj.name,
+                                  distance: obj.distance});
+                } else {
+                    o.mileage = mommileage;
+                }
+            }
+            // console.log(mom)
+
+            let dad = [];
+            let dadmileage = 0;
+            for (const obj of sortData.filter(person => person.name === "Dad")) {
+                let o = dad.find(o => o.date === obj.date);
+                dadmileage += obj.distance;
+
+                if(!o) {
+                    dad.push({mileage: dadmileage,
+                                  date: obj.date,
+                                  name: obj.name,
+                                  distance: obj.distance});
+                } else {
+                    o.mileage = dadmileage;
+                }
+            }
+            // console.log(dad)
+
+            let jul = [];
+            let julmileage = 0;
+            for (const obj of sortData.filter(person => person.name === "Julie")) {
+                let o = jul.find(o => o.date === obj.date);
+                julmileage += obj.distance;
+
+                if(!o) {
+                    jul.push({mileage: julmileage,
+                                  date: obj.date,
+                                  name: obj.name,
+                                  distance: obj.distance});
+                } else {
+                    o.mileage = julmileage;
+                }
+            }
+            // console.log(jul)
+
+            let dan = [];
+            let danmileage = 0;
+            for (const obj of sortData.filter(person => person.name === "Daniel")) {
+                let o = dan.find(o => o.date === obj.date);
+                danmileage += obj.distance;
+
+                if(!o) {
+                    dan.push({mileage: danmileage,
+                                  date: obj.date,
+                                  name: obj.name,
+                                  distance: obj.distance});
+                } else {
+                    o.mileage = danmileage;
+                }
+            }
+            // console.log(dan)
+
+            finalData = paul.concat(mom, dad, jul, dan);
+            console.log(finalData)
 
             // Make datatable
             $(document).ready(function(){
               $('#overviewTable').dataTable({
                 data: runData,
                 columns: [
-                  { data: 'date', title: "Date" },
+                  { data: 'date', title: "Date",
+                        render: function(data) {    // see datatables render function
+                            return formatTime(data);
+                        } 
+                  },
                   { data: 'name', title: "Name" },
                   { data: 'distance', title: "Distance" },
                   { data: 'time', title: "Time" }
@@ -107,33 +183,22 @@ title: FamBam Virtual Marathon 2020
               });
              });
 
-          }
+        // Vis starts here
 
-        //For converting strings to Dates
-        var parseTime = d3.timeParse("%m/%d");
-
-        // Clean data
-        // var cleanData = runData.map(function(d) { 
-        //     return {
-        //         date: parseTime(d.Date)
-        //     }
-        //   })
-
-      // set the dimensions and margins of the graph
+        // set the dimensions and margins of the graph
         var margin = {top: 20, right: 20, bottom: 30, left: 40},
             width = 960 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
-        // set the ranges
-        var x = d3.scaleBand()
+        // set the scales
+        var xScale = d3.scaleTime()
+                  .domain(d3.extent(finalData, d => d.date))
                   .range([0, width])
-                  .padding(0.1);
-        var y = d3.scaleLinear()
+        var yScale = d3.scaleLinear()
+                  .domain([0, d3.max(finalData, d => +d.mileage)])
                   .range([height, 0]);
 
-        
-
-        //Create SVG element
+        // Create SVG element
         var svg = d3.select("div#container")
                     .append("svg")
                       .attr("width", width + margin.left + margin.right)
@@ -141,6 +206,71 @@ title: FamBam Virtual Marathon 2020
                     .append("g")
                       .attr("transform", 
                             "translate(" + margin.left + "," + margin.top + ")");
+
+        // Add X axis --> it is a date format
+        var xAxis = d3.scaleTime()
+          .domain(d3.extent(runData, d => d.date))
+          .range([ 0, width ]);
+        svg.append("g")
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(xAxis)
+                    .tickFormat(d3.timeFormat("%b %d")));
+
+        // Add Y axis
+        var yAxis = d3.scaleLinear()
+          .domain([0, d3.max(finalData, function(d) { return +d.mileage; })])
+          .range([ height, 0 ]);
+        svg.append("g")
+          .call(d3.axisLeft(yAxis));
+
+        // 7. d3's line generator
+        var line = d3.line()
+            .x(d => xScale(d.date)) // set the x values for the line generator
+            .y(d => yScale(d.distance)) // set the y values for the line generator 
+
+        // Nest data to draw one per person
+        var nestData = d3.nest()
+                            .key(d => d.name)
+                            .entries(runData);
+        // console.log(nestData);   
+        
+
+        // 9. Append the path, bind the data, and call the line generator 
+        svg.selectAll(".line")
+            // .data(nestData)
+            .data(d3.nest()
+                    .key(d => d.name)
+                    .entries(finalData))
+            .enter().append("path")
+              .attr("fill", "none")
+              .attr("stroke", "steelblue")
+              .attr("stroke-width", 1.5)
+              .attr("stroke-linejoin", "round")
+              .attr("stroke-linecap", "round")
+            .attr("d", function(d){    // 11. Calls the line generator 
+              return d3.line()
+                .x(d => xScale(d.date))
+                .y(d => yScale(d.mileage))
+                (d.values)
+            }); 
+
+        // Add the points
+        svg.selectAll("myCircles")
+          .data(finalData)
+          .enter().append("circle")
+            .attr("fill", "royalblue")
+            .attr("stroke", "none")
+            .attr("cx", function(d) { return xScale(d.date) })
+            .attr("cy", function(d) { return yScale(d.mileage) })
+            .attr("r", 3)
+            .style("opacity", 0.5)
+
+
+
+
+    } // runData is gone here
+
+        
 
         </script>
 
