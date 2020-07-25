@@ -15,6 +15,16 @@ title: FamBam Virtual Marathon 2020
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
     <style type="text/css">
+        div.tooltip {   
+            position: absolute;       
+            text-align: center;         
+            width: 60px;                    
+            height: 85px;                   
+            padding: 2px;               
+            font-size: 12px;      
+            border: 0px;            
+            pointer-events: none;           
+        }
         
     </style>
   </head>
@@ -231,19 +241,23 @@ title: FamBam Virtual Marathon 2020
         // Nest data to draw one per person
         var nestData = d3.nest()
                             .key(d => d.name)
-                            .entries(runData);
+                            .entries(finalData);
         // console.log(nestData);   
+
+        // color palette
+          var res = nestData.map(function(d){ return d.key }) // list of group names
+          var color = d3.scaleOrdinal()
+            .domain(res)
+            .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999'])
         
 
         // 9. Append the path, bind the data, and call the line generator 
         svg.selectAll(".line")
             // .data(nestData)
-            .data(d3.nest()
-                    .key(d => d.name)
-                    .entries(finalData))
+            .data(nestData)
             .enter().append("path")
               .attr("fill", "none")
-              .attr("stroke", "steelblue")
+              .attr("stroke", d => color(d.key))
               .attr("stroke-width", 1.5)
               .attr("stroke-linejoin", "round")
               .attr("stroke-linecap", "round")
@@ -252,19 +266,59 @@ title: FamBam Virtual Marathon 2020
                 .x(d => xScale(d.date))
                 .y(d => yScale(d.mileage))
                 (d.values)
-            }); 
+            });
+
+        // Tooltip for points
+        var tooltip = d3.select("div#container")
+                        .append("div")
+                        .attr("class", "tooltip")
+                        .style("opacity",0)
+                        .style("background-color", "white")
+                        .style("border", "solid")
+                        .style("border-width", "1px")
+                        .style("border-radius", "5px")
+                        .style("padding", "5px")
+
+        var mouseover = function(d) {
+            tooltip.style("opacity", 1);
+        }
+        var mousemove = function(d) {
+            tooltip.html(d.name + "<br/>" +
+                        formatTime(d.date) + "<br/>" +
+                        Math.round(d.distance) + " today</br>" +
+                        Math.round(d.mileage) + " total")
+                    .style("left", (d3.event.pageX - 65) + "px")
+                    .style("top", (d3.event.pageY - 20) + "px");
+        }                            
+        var mouseleave = function(d) {
+            tooltip.transition().duration(200).style("opacity", 0);
+        }
 
         // Add the points
         svg.selectAll("myCircles")
           .data(finalData)
           .enter().append("circle")
-            .attr("fill", "royalblue")
+            .attr("fill", "grey")
             .attr("stroke", "none")
             .attr("cx", function(d) { return xScale(d.date) })
             .attr("cy", function(d) { return yScale(d.mileage) })
-            .attr("r", 3)
+            .attr("r", 2)
             .style("opacity", 0.5)
+          .on("mouseover", mouseover)
+          .on("mousemove", mousemove)
+          .on("mouseleave", mouseleave)
 
+        // Handmade legend
+        svg.append("circle").attr("cx",100).attr("cy",50).attr("r",4).style("fill","#e41a1c")
+        svg.append("circle").attr("cx",100).attr("cy",70).attr("r",4).style("fill","#377eb8")
+        svg.append("circle").attr("cx",100).attr("cy",90).attr("r",4).style("fill","#4daf4a")
+        svg.append("circle").attr("cx",100).attr("cy",110).attr("r",4).style("fill","#984ea3")
+        svg.append("circle").attr("cx",100).attr("cy",130).attr("r",4).style("fill","#ff7f00")
+        svg.append("text").attr("x",110).attr("y",50).text("Paul").style("font-size", "15px").attr("dominant-baseline","middle").style("fill","#e41a1c")
+        svg.append("text").attr("x",110).attr("y",70).text("Mom").style("font-size", "15px").attr("dominant-baseline","middle").style("fill","#377eb8")
+        svg.append("text").attr("x",110).attr("y",90).text("Dad").style("font-size", "15px").attr("dominant-baseline","middle").style("fill","#4daf4a")
+        svg.append("text").attr("x",110).attr("y",110).text("Julie").style("font-size", "15px").attr("dominant-baseline","middle").style("fill","#984ea3")
+        svg.append("text").attr("x",110).attr("y",130).text("Dan").style("font-size", "15px").attr("dominant-baseline","middle").style("fill","#ff7f00")
 
 
 
