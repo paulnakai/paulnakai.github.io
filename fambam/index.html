@@ -30,6 +30,11 @@ title: FamBam Virtual Marathon 2020
   </head>
   <body>
     <p id="overall"></p>
+        <input type="checkbox" class="checkbox" value="Paul" checked><label>Paul</label>
+        <input type="checkbox" class="checkbox" value="Mom" checked><label>Mom</label>
+        <input type="checkbox" class="checkbox" value="Dad" checked><label>Dad</label>
+        <input type="checkbox" class="checkbox" value="Julie" checked><label>Julie</label>
+        <input type="checkbox" class="checkbox" value="Daniel" checked><label>Dan</label>
         <div id="container" class="svg-container"></div>
         <table id="overviewTable" class="display" width="100%">
             <thead>
@@ -196,42 +201,44 @@ title: FamBam Virtual Marathon 2020
         // Vis starts here
 
         // set the dimensions and margins of the graph
-        var margin = {top: 20, right: 20, bottom: 30, left: 40},
+        var margin = {top: 20, right: 90, bottom: 40, left: 60},
             width = 960 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
         // set the scales
-        var xScale = d3.scaleTime()
-                  .domain(d3.extent(finalData, d => d.date))
-                  .range([0, width])
-        var yScale = d3.scaleLinear()
-                  .domain([0, d3.max(finalData, d => +d.mileage)])
-                  .range([height, 0]);
+        // var xScale = d3.scaleTime()
+        //           .domain(d3.extent(finalData, d => d.date))
+        //           .range([0, width])
+        // var yScale = d3.scaleLinear()
+        //           .domain([0, d3.max(finalData, d => +d.mileage)])
+        //           .range([height, 0]);
 
         // Create SVG element
         var svg = d3.select("div#container")
                     .append("svg")
-                      .attr("width", width + margin.left + margin.right)
-                      .attr("height", height + margin.top + margin.bottom)
+                      // .attr("width", width + margin.left + margin.right)
+                      // .attr("height", height + margin.top + margin.bottom)
+                      // .attr("viewBox", `0 0 ` + width + ` ` + height)
+                      .attr("viewBox", `0 0 896 500`)
                     .append("g")
                       .attr("transform", 
                             "translate(" + margin.left + "," + margin.top + ")");
 
-        // Add X axis --> it is a date format
-        var xAxis = d3.scaleTime()
-          .domain(d3.extent(runData, d => d.date))
+        // Initialize X axis 
+        var xScale = d3.scaleTime()
+          .domain(d3.extent(finalData, d => d.date))
           .range([ 0, width ]);
-        svg.append("g")
+        var xAxis = svg.append("g")
           .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(xAxis)
+          .call(d3.axisBottom(xScale)
                     .tickFormat(d3.timeFormat("%b %d")));
 
-        // Add Y axis
-        var yAxis = d3.scaleLinear()
+        // Initialize Y axis
+        var yScale = d3.scaleLinear()
           .domain([0, d3.max(finalData, function(d) { return +d.mileage; })])
           .range([ height, 0 ]);
-        svg.append("g")
-          .call(d3.axisLeft(yAxis));
+        var yAxis = svg.append("g")
+          .call(d3.axisLeft(yScale));
 
         // 7. d3's line generator
         var line = d3.line()
@@ -248,25 +255,42 @@ title: FamBam Virtual Marathon 2020
           var res = nestData.map(function(d){ return d.key }) // list of group names
           var color = d3.scaleOrdinal()
             .domain(res)
-            .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999'])
+            // .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999'])
+            .range(['#e41a1c','#ffff33','#4daf4a','#984ea3','#ff7f00','#377eb8','#a65628','#f781bf','#999999'])
         
 
         // 9. Append the path, bind the data, and call the line generator 
-        svg.selectAll(".line")
-            // .data(nestData)
-            .data(nestData)
-            .enter().append("path")
-              .attr("fill", "none")
-              .attr("stroke", d => color(d.key))
-              .attr("stroke-width", 1.5)
-              .attr("stroke-linejoin", "round")
-              .attr("stroke-linecap", "round")
-            .attr("d", function(d){    // 11. Calls the line generator 
-              return d3.line()
-                .x(d => xScale(d.date))
-                .y(d => yScale(d.mileage))
-                (d.values)
-            });
+        // svg.selectAll(".line")
+        //     // .data(nestData)
+        //     .data(nestData)
+        //     .enter().append("path")
+        //       .attr("fill", "none")
+        //       .attr("stroke", d => color(d.key))
+        //       .attr("stroke-width", 2)
+        //       .attr("stroke-linejoin", "round")
+        //       .attr("stroke-linecap", "round")
+        //     .attr("d", function(d){    // 11. Calls the line generator 
+        //       return d3.line()
+        //         .x(d => xScale(d.date))
+        //         .y(d => yScale(d.mileage))
+        //         (d.values)
+        //     });
+
+        // var line = svg.selectAll(".line")
+        //     // .append("g")
+        //     .data(nestData)
+        //     .enter().append("path")
+        //       .attr("fill", "none")
+        //       .attr("stroke", d => color(d.key))
+        //       .attr("stroke-width", 2)
+        //       .attr("stroke-linejoin", "round")
+        //       .attr("stroke-linecap", "round")
+        //     .attr("d", function(d){    // 11. Calls the line generator 
+        //       return d3.line()
+        //         .x(d => xScale(d.date))
+        //         .y(d => yScale(d.mileage))
+        //         (d.values)
+        //     });
 
         // Tooltip for points
         var tooltip = d3.select("div#container")
@@ -289,38 +313,147 @@ title: FamBam Virtual Marathon 2020
                         Math.round(d.mileage) + " total")
                     .style("left", (d3.event.pageX - 65) + "px")
                     .style("top", (d3.event.pageY - 20) + "px");
+            d3.select(this)
+                .attr("r", 5)
+                .style("opacity", 0.9);
         }                            
         var mouseleave = function(d) {
             tooltip.transition().duration(200).style("opacity", 0);
+            d3.select(this)
+                .attr("r", 3)
+                .style("opacity", 0.5);
         }
-
-        // Add the points
-        svg.selectAll("myCircles")
-          .data(finalData)
-          .enter().append("circle")
-            .attr("fill", "grey")
-            .attr("stroke", "none")
-            .attr("cx", function(d) { return xScale(d.date) })
-            .attr("cy", function(d) { return yScale(d.mileage) })
-            .attr("r", 2)
-            .style("opacity", 0.5)
-          .on("mouseover", mouseover)
-          .on("mousemove", mousemove)
-          .on("mouseleave", mouseleave)
 
         // Handmade legend
         svg.append("circle").attr("cx",100).attr("cy",50).attr("r",4).style("fill","#e41a1c")
-        svg.append("circle").attr("cx",100).attr("cy",70).attr("r",4).style("fill","#377eb8")
+        svg.append("circle").attr("cx",100).attr("cy",70).attr("r",4).style("fill","#ffff33")
         svg.append("circle").attr("cx",100).attr("cy",90).attr("r",4).style("fill","#4daf4a")
         svg.append("circle").attr("cx",100).attr("cy",110).attr("r",4).style("fill","#984ea3")
         svg.append("circle").attr("cx",100).attr("cy",130).attr("r",4).style("fill","#ff7f00")
         svg.append("text").attr("x",110).attr("y",50).text("Paul").style("font-size", "15px").attr("dominant-baseline","middle").style("fill","#e41a1c")
-        svg.append("text").attr("x",110).attr("y",70).text("Mom").style("font-size", "15px").attr("dominant-baseline","middle").style("fill","#377eb8")
+        svg.append("text").attr("x",110).attr("y",70).text("Mom").style("font-size", "15px").attr("dominant-baseline","middle").style("fill","#ffff33")
         svg.append("text").attr("x",110).attr("y",90).text("Dad").style("font-size", "15px").attr("dominant-baseline","middle").style("fill","#4daf4a")
         svg.append("text").attr("x",110).attr("y",110).text("Julie").style("font-size", "15px").attr("dominant-baseline","middle").style("fill","#984ea3")
         svg.append("text").attr("x",110).attr("y",130).text("Dan").style("font-size", "15px").attr("dominant-baseline","middle").style("fill","#ff7f00")
 
+        // This function is gonna change the opacity and size of selected and unselected circles
+        function update() {
+            choices = [];
+          // For each check box:
+          d3.selectAll(".checkbox").each(function(d){
+            cb = d3.select(this);
+            if(cb.property("checked")) {
+                choices.push(cb.property("value"));
+            }
+          })
 
+            if(choices.length > 0) {
+                var filterData = finalData.filter(d => choices.includes(d.name))
+            } else {
+                var filterData = finalData
+            }
+
+            var filterNestData = d3.nest()
+                            .key(d => d.name)
+                            .entries(filterData)
+
+            // Update scales
+            xScale.domain(d3.extent(filterData, d => d.date))
+            yScale.domain([0, d3.max(filterData, function(d) { return +d.mileage; })])
+
+            svg.selectAll(".line").remove(); // janky solution to updating all
+
+            // Add lines
+            var line = svg.selectAll(".line")
+                .data(filterNestData, function(d){
+                    return d.key
+                })
+            
+            line.enter().append("path").classed("line", true)
+                .transition()
+                .duration(800)
+              .attr("fill", "none")
+              .attr("stroke", d => color(d.key))
+              .attr("stroke-width", 2)
+              .attr("stroke-linejoin", "round")
+              .attr("stroke-linecap", "round")
+            .attr("d", function(d){    // Calls the line generator 
+              return d3.line()
+                .x(d => xScale(d.date))
+                .y(d => yScale(d.mileage))
+                (d.values)
+            });
+
+            line.exit()
+                    .transition()
+                    .duration(800)
+                    .style('opacity', 0)
+                .remove()
+
+
+            // Add the points
+            svg.selectAll(".circles").remove();
+
+            var circles = svg.selectAll(".circles")
+                            .data(filterData, d => d.name)
+            
+            circles.enter().append("circle").classed("circles", true)
+                .attr("fill", "grey")
+                .attr("stroke", "none")
+                .attr("cx", function(d) { return xScale(d.date) })
+                .attr("cy", function(d) { return yScale(d.mileage) })
+                .attr("r", 3)
+                .style("opacity", 0.5)
+                  .on("mouseover", mouseover)
+                  .on("mousemove", mousemove)
+                  .on("mouseleave", mouseleave)
+
+            // circles.transition() // Not working but nbd
+            //     .duration(800)
+            //     .style("opacity", 0.5)
+            //     // .transition().attr('pointer-events', 'auto')
+
+            circles.transition() // still not working lol
+                .style('opacity', 0)
+                .duration(800)
+                .style('opacity', 0.5)
+                
+
+            circles.exit()
+                  .transition()
+                  .duration(800)
+                  .style('opacity', 0)
+                .remove()
+
+
+            // Update X axis
+            // var xAxis = d3.scaleTime()
+            //   .domain(d3.extent(finalData, d => d.date))
+            //   .range([ 0, width ]);
+            // svg.append("g")
+            //   .attr("transform", "translate(0," + height + ")")
+            //   .call(d3.axisBottom(xAxis)
+            //             .tickFormat(d3.timeFormat("%b %d")));
+
+            // // Update Y axis
+            // var yAxis = d3.scaleLinear()
+            //   .domain([0, d3.max(finalData, function(d) { return +d.mileage; })])
+            //   .range([ height, 0 ]);
+            // svg.append("g")
+            //   .call(d3.axisLeft(yAxis));
+
+            
+            xAxis.transition().duration(800).call(d3.axisBottom(xScale))
+            yAxis.transition().duration(800).call(d3.axisLeft(yScale))
+
+
+        }
+
+        // When a button change, I run the update function
+        d3.selectAll(".checkbox").on("change",update);
+
+        // And I initialize it at the beginning
+        update()
 
     } // runData is gone here
 
